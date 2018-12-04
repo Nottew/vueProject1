@@ -24,6 +24,7 @@ export default {
       currentView: 'square',
       fields1: ['text', 'radio', 'checkbox', 'submit'],
       fields2: ['text', 'text', 'submit'],
+      fields2: ['text', 'text', 'submit', 'text'],
       items: [],
     }
   },
