@@ -11,7 +11,7 @@
    <square v-if="currentView == 'square'"/>
    <circle v-else-if="currentView == 'circle'"/>
    <triangle v-else-if="currentView == 'triangle'"/>
-   <egg v-else/>
+   <egg v-else/> 
   </div>
 </template>
 
