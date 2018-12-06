@@ -1,6 +1,17 @@
 <template>
   <div>
-   
+   <header>
+            <nav>
+                <a href="#" @click="switchView('square')">Квадрат</a>
+                <a href="#" @click="switchView('triangle')">Треугольник</a>
+                <a href="#" @click="switchView('circle')">Круг</a>
+                <a href="#" @click="switchView('egg')">Яйцо</a>
+            </nav>
+   </header>
+   <square v-if="currentView == 'square'"/>
+   <circle v-else-if="currentView == 'circle'"/>
+   <triangle v-else-if="currentView == 'triangle'"/>
+   <egg v-else/>
   </div>
 </template>
 
@@ -14,14 +25,19 @@ export default {
   name: 'App',
   data() {
     return {
-      
+      currentView: ''
     }
   },
   components: {
-    
+    square,
+    circle,
+    triangle,
+    egg
   },
   methods: {
-
+    switchView: function (arg) {
+      this.currentView = arg;
+    }
   }
 }
 </script>
