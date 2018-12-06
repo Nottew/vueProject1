@@ -1,5 +1,5 @@
-<template id="circle-template">
-  <div class="circle">
+<template id="circl-template">
+  <div class="circl">
    
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'circle',
+  name: 'circl',
 }
 </script>
 

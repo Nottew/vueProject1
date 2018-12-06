@@ -4,20 +4,24 @@
             <nav>
                 <a href="#" @click="switchView('square')">Квадрат</a>
                 <a href="#" @click="switchView('triangle')">Треугольник</a>
-                <a href="#" @click="switchView('circle')">Круг</a>
+                <a href="#" @click="switchView('circl')">Круг</a>
                 <a href="#" @click="switchView('egg')">Яйцо</a>
             </nav>
    </header>
    <square v-if="currentView == 'square'"/>
-   <circle v-else-if="currentView == 'circle'"/>
+   <circl v-else-if="currentView == 'circl'"/>
    <triangle v-else-if="currentView == 'triangle'"/>
    <egg v-else/> 
+
+   <transition name="switch" mode="out-in">
+          <component :is="currentView"></component>
+   </transition>
   </div>
 </template>
 
 <script>
 import square from './components/f1';
-import circle from './components/f2';
+import circl from './components/f2';
 import triangle from './components/f3';
 import egg from './components/f4';
 
@@ -30,7 +34,7 @@ export default {
   },
   components: {
     square,
-    circle,
+    circl,
     triangle,
     egg
   },
@@ -83,7 +87,7 @@ nav a:hover {
 /* Фигуры */
 .square,
 .triangle,
-.circle,
+.circl,
 .egg {
     position: absolute;
     top: 120px;
@@ -106,7 +110,7 @@ nav a:hover {
     margin-left: -120px;
 }
 
-.circle {
+.circl {
     width: 240px;
     height: 240px;
     border-radius: 50%;
